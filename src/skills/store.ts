@@ -5,3 +5,6 @@ export const globalState= configureStore({
         Skills: reducerSkill.reducer
     }
 })
+
+export type StoreType= ReturnType<typeof globalState.getState>
+export type Dispathtype= typeof globalState.dispatch

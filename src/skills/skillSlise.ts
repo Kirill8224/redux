@@ -34,9 +34,13 @@ export const reducerSkill=
         const item: Skill | undefined= State.items.find((item)=>{item.title === Payload.payload})
         if(item){
         State.items= State.items.filter((skil)=>{skil.title != item.title})}
+      },
+      SkillAdd: (State: SkillsState, Payload: PayloadAction<string>)=>{
+        const item: Skill= {id: String(State.items.length + 1), title: Payload.payload, isLearned: false}
+        State.items= [...State.items, item]
       }
     }
   })
 
-  export const { SkillDel } = reducerSkill.actions; // Экспорт экшена
-  export default reducerSkill.reducer;    
+export default reducerSkill.reducer
+export const {SkillDel, SkillAdd} = reducerSkill.actions
