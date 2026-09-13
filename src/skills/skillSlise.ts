@@ -7,7 +7,7 @@ export interface Skill {
   isLearned: boolean; // Статус (изучено или нет: true/false)
 }
 // 2. Чертеж состояния нашего слайса
-interface SkillsState {
+export interface SkillsState {
   items: Skill[];   // Внутри состояния будет объект, где лежит массив навыков
 }
 
