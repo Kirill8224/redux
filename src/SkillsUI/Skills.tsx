@@ -6,7 +6,7 @@ import { SkillAdd } from "../skills/skillSlise";
 export function SkillsUI(){
     const Skills= useSelector((state: StoreType)=> state.Skills.items)
     const dispath= useDispatch()
-    let additem
+    let additem: string
     return(<>
     <Typography sx={{alignItems: 'center'}} variant="h1">SkillTracker 🚀</Typography>
     <Typography sx={{alignItems: 'center'}} variant="h5">Мои учебные навыки:</Typography>
