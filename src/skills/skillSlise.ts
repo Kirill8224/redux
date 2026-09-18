@@ -35,8 +35,9 @@ export const reducerSkill=
         if(item){ State.items= State.items.filter((skil)=>{return skil.title != item.title})}
       },
       SkillAdd: (State: SkillsState, Payload: PayloadAction<string>)=>{
+        if(Payload.payload && Payload.payload.length > 4){
         const item: Skill= {id: String(State.items.length + 1), title: Payload.payload, isLearned: false}
-        State.items= [...State.items, item]
+        State.items= [...State.items, item]}
       }
     }
   })
