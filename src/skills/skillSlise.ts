@@ -31,16 +31,19 @@ export const reducerSkill=
     initialState,
     reducers: {
       SkillDel: (State: SkillsState, Payload: PayloadAction<string>)=>{
-        const item: Skill | undefined= State.items.find((item)=>{return item.title === Payload.payload})
-        if(item){ State.items= State.items.filter((skil)=>{return skil.title != item.title})}
+        if(Payload.payload){ State.items= State.items.filter((skil)=>{return skil.id != Payload.payload})}
       },
       SkillAdd: (State: SkillsState, Payload: PayloadAction<string>)=>{
         if(Payload.payload && Payload.payload.length > 4){
-        const item: Skill= {id: String(State.items.length + 1), title: Payload.payload, isLearned: false}
+        const item: Skill= {id: String(Date.now()), title: Payload.payload, isLearned: false}
         State.items= [...State.items, item]}
-      }
-    }
+      }, 
+      LearnedChange: (State: SkillsState, action: PayloadAction<string>)=>{
+        const item= State.items.find((skill)=> skill.id === action.payload)
+        if(item){
+        item.isLearned= !item.isLearned}
+    }}
   })
 
 export default reducerSkill.reducer
-export const {SkillDel, SkillAdd} = reducerSkill.actions
+export const {SkillDel, SkillAdd, LearnedChange} = reducerSkill.actions
