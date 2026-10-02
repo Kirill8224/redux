@@ -1,11 +1,9 @@
 import { Typography, Card, TextField, Button } from "@mui/material";
-import type {StoreType} from '../skills/store'
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useAppSelector, useAppDispatch } from "../skills/hooks";
 import { SkillAdd, SkillDel, LearnedChange } from "../skills/skillSlise";
 export function SkillsUI(){
-    const Skills= useSelector((state: StoreType)=> state.Skills.items)
-    const dispath= useDispatch()
+    const Skills= useAppSelector((state)=> state.Skills.items)
+    const dispath= useAppDispatch()
     let additem: string
     return(<>
     <Typography sx={{alignItems: 'center'}} variant="h1">SkillTracker 🚀</Typography>
