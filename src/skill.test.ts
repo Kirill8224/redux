@@ -1,4 +1,4 @@
-import { initialState } from "./skills/skillSlise";
+import { initialState } from "./skills/dall";
 import reducerSkill from './skills/skillSlise'
 import { SkillDel, SkillAdd, LearnedChange } from "./skills/skillSlise";
 import { test, expect } from 'vitest'
