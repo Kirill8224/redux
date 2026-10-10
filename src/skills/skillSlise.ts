@@ -1,7 +1,7 @@
 import { createSlice} from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import {initialState} from './dall'
-import type { SkillsState, Skill } from './dall';
+import {initialState} from './data'
+import type { SkillsState, Skill } from './types';
 // 1. Чертеж одного навыка
 export const reducerSkill=
   createSlice({
